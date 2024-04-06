@@ -83,5 +83,5 @@ app.post("/subscriber", (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log("Listening on http://localhost:3000")
+    console.log("Listening on port 3000.")
 })
