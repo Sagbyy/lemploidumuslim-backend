@@ -46,9 +46,10 @@ app.post("/subscriber", (req, res) => {
                     ListID: listId,
                 })
                 .then((result: any) => {
+                    console.log(result)
                     res.send({
                         message: `Contact ${email} added to the list`,
-                        status: result.statusCode,
+                        status: result.response.status,
                     })
                 })
                 .catch((error) => {
