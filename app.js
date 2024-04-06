@@ -42,8 +42,8 @@ app.post("/subscriber", (req, res) => {
         })
             .then((result) => {
             res.send({
-                success: `Contact ${email} added to the list`,
-                status: result.status,
+                message: `Contact ${email} added to the list`,
+                status: result.statusCode,
             });
         })
             .catch((error) => {
@@ -54,13 +54,13 @@ app.post("/subscriber", (req, res) => {
                 .request()
                 .then(() => {
                 res.send({
-                    error: error.statusText,
+                    message: error.statusText,
                     status: error.statusCode,
                 });
             })
                 .catch(() => {
                 res.send({
-                    error: error.statusText,
+                    message: error.statusText,
                     status: error.statusCode,
                 });
             });
@@ -78,3 +78,4 @@ app.post("/subscriber", (req, res) => {
 app.listen(3000, () => {
     console.log("Listening on port 3000.");
 });
+module.exports = app;
