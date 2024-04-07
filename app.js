@@ -35,7 +35,7 @@ app.post("/subscriber", (req, res) => {
         mailjet
             .post("listrecipient", { version: "v3" })
             .request({
-            IsUnsubscribed: true,
+            IsUnsubscribed: false,
             ContactID: contactId,
             ContactAlt: email,
             ListID: listId,
